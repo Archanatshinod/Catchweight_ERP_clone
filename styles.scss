@@ -1,0 +1,658 @@
+// Define a variable for the orange color to use consistently
+$orange-color: #f89922;
+
+body {
+  font-size: 100%;
+  background: #f4f7f9;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+.navbar{
+  background-color: #f4f7f9;
+}
+.navbar-brand {
+  text-align: center;
+  display: block;
+
+  .subtitle {
+    font-size: 11px; // Adjust the size here
+    line-height: 1.5; // Optional: control spacing between title and subtitle
+  }
+
+  .display-4 {
+    font-weight: 600; // Make sure the brand name is bold
+  }
+}
+
+.orange {
+  color: $orange-color;
+}
+
+.nav-item {
+  font-weight: bold;
+}
+
+.main {
+  justify-content: center;
+  text-align: center;
+  width: 60%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @extend %message-shared;
+  @extend %bubble
+ 
+}
+%message-shared{
+    h2,h1 {
+        font-size: 70px;
+        color: #333;
+        font-weight: 700;
+        
+    }
+    h1{
+      margin-top: 75px;
+    }
+        span {
+          color: $orange-color;
+        }
+    
+    
+      p {
+        margin: 20px 0;
+        font-size: 18px;
+        color: #666;
+      }
+      h3{
+        font-size: 50px;
+        color: #333;
+        font-weight: 700;
+      }
+}
+
+// General styles for the form
+form{
+  justify-content: space-between;
+  background-color: white;
+  width: 60%;
+  // max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+  // flex-wrap: wrap; // Ensure content wraps on smaller screens
+
+  .form-button {
+    background-color: $orange-color;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    height: 100%;
+    padding: 20px 30px; // Ensures some padding around the button
+    outline: none;
+  }
+
+}
+.form1{
+  display: flex;
+  
+  input {
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    flex: 1; // Make input take up the remaining space
+    padding: 20px; // Add some padding for a better look
+  }
+
+
+  input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
+
+
+}
+
+// Media queries for responsiveness
+@media (max-width: 768px) {
+  form {
+    width: 100%; // Make the form narrower on tablets
+    // padding: 15px;
+    flex-direction: row;
+  }
+
+  form input {
+    font-size: 14px; // Adjust input size for smaller screens
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  form {
+    width: 100%; // Make the form even narrower on small screens
+    // padding: 10px;
+    flex-direction: row; // Stack input and button vertically
+  }
+
+  form input {
+    width: 100%; // Make input take full width
+    margin-bottom: 10px; // Add spacing between input and button
+    flex-shrink: 0;
+  }
+
+  .form-button {
+    width: 100%; // Make the button take full width
+  }
+}
+
+.email-input:focus {
+  box-shadow: none;
+  outline: none; // Ensure no outline appears on focus
+}
+
+// Bubble animations and positioning
+%bubble{
+#bubble-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bubble1, .bubble2, .bubble3, .bubble4, .bubble5 {
+  border-radius: 50%;
+  position: absolute;
+  animation: bubblePulse 5s infinite ease-in-out;
+}
+
+.bubble1 {
+  width: 30px;
+  height: 30px;
+  background-color: #FEBE00;
+  top: 25%;
+  right: 20%;
+}
+
+.bubble2 {
+  width: 18px;
+  height: 18px;
+  background-color: $orange-color;
+  top: 30%;
+  left: 18%;
+}
+
+.bubble3 {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(0, 123, 255, 0.8);
+  top: 40%;
+  right: 15%;
+}
+
+.bubble4 {
+  width: 25px;
+  height: 25px;
+  background-color: rgb(199, 47, 47);
+  top: 50%;
+  left: 12%;
+}
+
+.bubble5 {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(110, 18, 196);
+  top: 60%;
+  right: 18%;
+}
+
+@keyframes bubblePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2); // Makes the bubble bigger
+    opacity: 0.5; // Slight fade
+  }
+}
+}
+.catch {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  padding-top:5%;
+  @extend %message-shared;
+}
+li{
+  @extend %message-shared;
+}
+/* ROJO POGI PLAY BUTTON */
+
+.video-play-button {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-sizing: content-box;
+  display: block;
+  width: 32px;
+  height: 44px;
+  /* background: #fa183d; */
+  border-radius: 50%;
+  padding: 18px 20px 18px 28px;
+}
+
+.video-play-button:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #ff4c60;
+  border-radius: 50%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+
+.video-play-button:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #ff4c60;
+  border-radius: 50%;
+  transition: all 200ms;
+}
+
+.video-play-button:hover:after {
+  background-color: #f1ad34;
+}
+.video-play-button:before {
+  content: "";
+  color: red;
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #ff4c60;
+  border-radius: 50%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+
+.video-play-button img {
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.video-play-button span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-left: 32px solid #fff;
+	border-top: 22px solid transparent;
+	border-bottom: 22px solid transparent;
+}
+
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+
+.video-overlay {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.80);
+  opacity: 0;
+  transition: all ease 500ms;
+}
+
+.video-overlay.open {
+  position: fixed;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.video-overlay-close {
+  position: absolute;
+  z-index: 1000;
+  top: 15px;
+  right: 20px;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 400;
+  color: #f1ad34;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.video-overlay-close:hover {
+  color: #ff4c60;
+  transform: scale(1.5);
+}
+
+.video-overlay iframe {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* width: 90%; */
+  /* height: auto; */
+  box-shadow: 0 0 15px rgba(0,0,0,0.75);
+}
+
+/* ENTRANCE ANIMATION OF THE PLAY BUTTON */
+
+.video-play-button {
+  -webkit-animation: scale-up-center 1s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+  animation: scale-up-center 1s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+
+  top: 46%;
+  /* Set your desired initial colors */
+  background-color: #fa183d !important; /* Force the background color */
+  color: white !important;              /* Force the text/icon color */
+  border: none; /* Prevent any border color changes */
+
+  /* Ensure no transitions occur */
+  transition: none !important;
+
+  /* Disable hover, focus, and active effects */
+  &:hover, &:focus, &:active {
+    background-color: #fa183d !important;  /* Prevent background color change */
+    color: white !important;               /* Prevent text/icon color change */
+    border: none !important;               /* Prevent border change */
+    transition: none !important;           /* Disable transitions on hover */
+  }
+}
+
+
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.second{
+  // background-image: url('dashboard.png');
+
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  // padding-top: 50%;
+  position: relative;
+  // padding-left: 350px;
+}
+
+.third {
+  display: flex;
+  flex-direction: column;
+
+  h3,
+  p {
+    text-align: left; // Align heading and paragraph to the left
+    margin-left: 0; // No extra margin
+    
+  }
+
+  .slider-wrapper {
+    margin-top: 20px; // Space between paragraph and slider
+  }
+
+  .form-button {
+    align-self: center; // Center the button
+    margin-top: 20px; // Optional spacing above button
+    background-color: $orange-color;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    height: 100%;
+    padding: 20px 30px; // Ensures some padding around the button
+    outline: none;
+    
+  }
+  @extend %message-shared;
+  
+}
+
+  
+  
+
+
+// .slider-wrapper {
+//   position: relative;
+//   overflow: hidden; /* Hide overflow */
+//   width: 100%; /* Full width for the slider */
+//   padding: 10px 0; /* Padding to give space for card */
+// }
+
+// .slider-container {
+//   display: flex;
+//   transition: transform 0.5s ease; /* Smooth transition for sliding */
+//   width: 100%; /* Set the width for container */
+// }
+
+// .card {
+//   flex: 0 0 25%; /* Each card takes up 25% of the width */
+//   margin-right: 10px; /* Space between cards */
+// }
+
+// .card img {
+//   width: 100%; /* Ensure the image fills the card */
+// }
+
+.fourth{
+  text-align: center;
+  @extend %message-shared;
+}
+
+.seven{
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  @extend %bubble
+  
+}
+
+
+.form2 {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
+  margin-bottom: 10%;
+  background-color: white;
+  z-index: 1; // Keep form on top of bubbles
+
+  h4, h2 {
+    margin-bottom: 20px;
+  }
+
+  .input-group {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+
+    input {
+      width: 45%; // Each input will take up 45% of the width
+      padding: 10px 0;
+      border: none;
+      border-bottom: 2px solid #ccc; // Only bottom border for the underline effect
+      outline: none; // Remove outline on focus
+      background: none; // Ensure no background for cleaner look
+      font-size: 16px;
+
+     
+    }
+  }
+  
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  // max-width: 1200px;
+  margin-top: 5%;
+  // margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-col {
+  flex-basis: 40%;
+  padding: 0 20px; // Padding for space between text and border
+  position: relative;
+  margin: 0;
+  &:not(:last-child) {
+    border-right: 1px solid #ccc; // Add border to all columns except the last one
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8;
+  }
+
+  .industry-columns {
+    display: flex; // Set to flex to create two columns
+
+    .industry-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 10px; // Space between columns
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+
+        &:hover {
+          color: #ff9933;
+        }
+      }
+    }
+  }
+}
+
+  .social-icons {
+    margin-top: 20px;
+
+    a {
+      color: #333;
+      font-size: 20px;
+      margin-right: 10px;
+      text-decoration: none;
+
+      &:hover {
+        color: #ff9933;
+      }
+    }
+  }
+}
+
+.footer {
+   text-align: left;
+  p {
+    font-size: 20px;
+    color: #999;
+  }
+  @extend .navbar-brand
+}
+
+
+
+
+
+.six{
+  text-align: center;
+  @extend %message-shared
+}
+
+.modal-body{
+  .form-button{
+    width: 30%;
+    padding: 5px;
+  }
+}
+
+// 
+.slider-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+  overflow: hidden; 
+  position: relative; 
+}
+
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+  width: 100%; 
+
+.slick-track {
+  display: flex !important; 
+  transform: none !important; 
+}
+
+.slick-slide {
+  width: 100% !important; 
+  box-sizing: border-box;
+}
+
+.card {
+  padding: 20px;
+  text-align: center;
+  margin: 0 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 100%; 
+}
+}
