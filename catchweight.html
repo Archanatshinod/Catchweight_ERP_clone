@@ -1,337 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CatchW8 Clone</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CatchW8 Clone</title>
 
-<!-- External CSS Libraries -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
+    <!-- jQuery (required for Owl Carousel) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-<!-- Slick JS -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<!-- Your Custom CSS File -->
-<link rel="stylesheet" href="/home/archana/Desktop/Tasks/style1.css"> 
-<link rel="stylesheet" href="/home/archana/Desktop/Tasks/catchw8.js"> 
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+    <!-- Slick Slider JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
+    <!-- Your Custom CSS File -->
+    <link rel="stylesheet" href="/home/archana/Desktop/Tasks/style1.css"> 
 </head>
 
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-5" href="#">
+                <span class="display-4 d-block">CATCH<span class="orange">W8</span></span>
+                <small class="d-block subtitle">COMPLETE CATCHWEIGHT MANAGEMENT ERP</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">Industries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Integration</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span>Odoo Apps</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-md navbar-light sticky-top">
-    <div class="container-fluid">
-        <!-- Brand and Subtitle -->
-        <a class="navbar-brand ms-5" href="#">
-            <span class="display-4 d-block">CATCH<span class="orange">W8</span></span>
-            <small class="d-block subtitle">COMPLETE CATCHWEIGHT MANAGEMENT ERP</small>
-        </a>
-
-        <!-- Navbar Toggle for Mobile View -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Navbar Links -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#">Industries</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Integration</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><span>Odoo Apps</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
-            </ul>
+    <!-- login section popup modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="loginModalLabel">Login</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="form-button w-100">Login</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
-<!-- login section popup modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="loginModalLabel">Login</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- Login Form -->
-        <form>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password" required>
-          </div>
-          <button type="submit" class="form-button w-100">Login</button>
-        </form>
-      </div>
+
+    <!-- Main Section -->
+    <section class="container-fluid">
+        <div class="main mt-5">
+            <div class="bubble1"></div><br>
+            <div class="bubble2"></div>
+            <h1><b>Manage your business with powerful <span>ERP solutions</span></b></h1>
+            <div class="bubble3"></div>
+            <p>All in one web-based ERP solution enriched with Catchweight inventory feature. Maintain your inventory in dual units of measure. Ideal product for supply chain, FMCG, etc.</p>
+            <div class="bubble4"></div>
+            <form class="form1">
+                <input type="email" placeholder="Email Address" required>
+                <button class="form-button" type="submit"><b>Free Demo</b></button>
+            </form>
+            <div class="bubble5"></div>
+        </div>
+        <div class="catch"><h3><b>#1 <span>CATCHWEIGHT </span>SOLUTION SINCE 2017 </b></h3></div>
+    </section>
+
+    <div class="second">
+        <img src="dashboard.png" class="w-100 reduced-width">
+        <a id="play-video" class="video-play-button" href="#">
+            <span></span>
+        </a>
     </div>
-  </div>
-</div>
-<!-- Main Section -->
-<section class="container-fluid">
-   
-    <div class="main mt-5">
-        <div class="bubble1"></div><br>
+
+    <div class="third">
+        <h3><b>Choose your industry</b></h3>
+        <p>Explore ERP solutions by Industry and find a perfect match for your business.</p>
+        <button class="form-button" type="submit">More Industry</button>
+        <div class="industry-slider">
+            <div class="industry-card">
+              <img src="fabric.jpg" alt="Fabric Industry">
+              <p>Poultry Industry</p>
+            </div>
+            <div class="industry-card">
+              <img src="livestock.jpg" alt="Live Stock Industry">
+              <p>Seafood Industry</p>
+            </div>
+            <div class="industry-card">
+              <img src="meat.jpg" alt="Meat Industry">
+              <p>Fruits Industry</p>
+            </div>
+            <div class="industry-card">
+                <img src="fabric.jpg" alt="Fabric Industry">
+                <p>Fabric Industry</p>
+              </div>
+              <div class="industry-card">
+                <img src="livestock.jpg" alt="Live Stock Industry">
+                <p>Live Stock Industry</p>
+              </div>
+              <div class="industry-card">
+                <img src="meat.jpg" alt="Meat Industry">
+                <p>Meat Industry</p>
+              </div>
+              <div class="industry-card">
+                <img src="dairy.jpg" alt="Dairy Industry">
+                <p>Dairy Industry</p>
+              </div>
+            
+            <!-- Add more slides if necessary -->
+          </div>
+          <script src="catchw8.js"></script>
+    </div>
+
+    <div class="fourth">
+        <h3><b>What we do</b></h3>
+        <p>We integrate the powerful Catchweight inventory feature on a leading Odoo ERP which helps the customers to get the freedom to manage <br> their inventory and business operation based on both units and weights at a time. The end user gets the advantages of a 7 million user base<br>ERP with Catchweight feature.</p>
+    </div>
+
+    <div class="fifth">
+        <h3><b>Our Gallery</b></h3>
+        <div class="owl-carousel owl-theme">
+            <div class="item"><img src="/home/archana/Desktop/Screenshot from 2024-09-26 10-16-49.png" style="width:644px; height: 500px;" alt="Image 1"></div>
+            <div class="item"><img src="/home/archana/Desktop/Screenshot from 2024-09-26 10-16-49.png" alt="Image 2"></div>
+            <div class="item"><img src="/home/archana/Desktop/Screenshot from 2024-09-26 10-16-49.png" alt="Image 3"></div>
+            <div class="item"><img src="/home/archana/Desktop/Screenshot from 2024-09-26 10-16-49.png" alt="Image 3"></div>
+            <div class="item"><img src="/home/archana/Desktop/Screenshot from 2024-09-26 10-16-49.png" alt="Image 3"></div>
+            <div class="item"><img src="/home/archana/Desktop/Screenshot from 2024-09-26 10-16-49.png" alt="Image 3"></div>
+            <!-- Add more images as needed -->
+             
+        </div>
+    </div>
+
+    <div class="six">
+      <h3><b>What our clients <br>think about us</b></h3>
+      <div class="bubble1"></div>
         <div class="bubble2"></div>
-        <h1><b>Manage your business with powerful <span>ERP solutions</span></b></h1>
         <div class="bubble3"></div>
-        <p>All in one web-based ERP solution enriched with Catchweight inventory feature. Maintain your inventory in dual units of measure. Ideal product for supply chain, FMCG, etc.</p>
         <div class="bubble4"></div>
-        <form class="form1">
-            <input type="email" placeholder="Email Address" required>
-            <button class="form-button" type="submit"><b>Free Demo</b></button>
-        </form>
         <div class="bubble5"></div>
-       
-    </div>
-    
-    <div class="catch"><h3 ><b>#1 <span>CATCHWEIGHT </span>SOLUTION SINCE 2017 </b></h3></div>
-</section> 
-
-<!-- Bubbles and Other Content -->
-<div class="second">
-  <img src="dashboard.png" class="w-100">
-    <a id="play-video" class="video-play-button" href="#">
-        <span></span>
-      </a>
-      <!-- <div id="video-overlay" class="video-overlay"> -->
-      <!-- </div> -->
-</div>
-
-<div class="third">
-  <h3><b>Choose your industry</b></h3>
-  <p>Explore ERP solutions by Industry and find a perfect match for your business.</p>
-  
-  <div class="slider-wrapper">
-    <div class="slider-container">
-        <!-- Card 1 -->
-        <div class="card" style="background-color: #fa183d;">
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title 1</h5>
-                <p class="card-text">This is a card with supporting text below.</p>
-            </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="card" style="background-color: #007bff;">
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title 2</h5>
-                <p class="card-text">This is a card with supporting text below.</p>
-            </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="card" style="background-color: #28a745;">
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title 3</h5>
-                <p class="card-text">This is a card with supporting text below.</p>
-            </div>
-        </div>
-        <!-- Card 4 -->
-        <div class="card" style="background-color: #ffc107;">
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title 4</h5>
-                <p class="card-text">This is a card with supporting text below.</p>
-            </div>
-        </div>
-        <!-- Card 5 -->
-        <div class="card" style="background-color: #17a2b8;">
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title 5</h5>
-                <p class="card-text">This is a card with supporting text below.</p>
-            </div>
-        </div>
-        <!-- Card 6 -->
-        <div class="card" style="background-color: #6f42c1;">
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title 6</h5>
-                <p class="card-text">This is a card with supporting text below.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-  <!-- <script src="path/to/jquery.min.js"></script>
-  <script src="path/to/slick.min.js"></script>
-  <script src="catchw8.js"></script> -->
-  <button class="form-button" type="submit">More Industry</button>
-</div>
-
-
-
-<div class="fourth">
-  <h3 ><b>What we do</b></h3>
-    <p>We integrate the poweerful Catchweight inventory feature on a leading Odoo ERP which helps
-      the customers to get the freedom to manage<br>their inventory and business operation based on both units and weights
-      at a time. The end user gets the advantages of 7 million user base<br> ERP with Catchweight feature. 
-    </p>
-</div>
-
-<div class="fifth">
-  <div class="slideshow-container">
-    <div class="slides-wrapper">
-      <div class="slide" style="background-color: lightcoral;">Div 1</div>
-      <div class="slide" style="background-color: lightgreen;">Div 2</div>
-      <div class="slide" style="background-color: lightblue;">Div 3</div>
-      <div class="slide" style="background-color: lightyellow;">Div 4</div>
-      <div class="slide" style="background-color: lightpink;">Div 5</div>
-    </div>
-  </div>
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Slick Slider JS -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>  
-
-</div>
-
-<script src="catchw8.js"></script>
-
-<div class="six">
-  <h3 ><b>What our clients <br>think about us</b></h3>
-</div>
-
-<div class="seven">
-  <div class="bubble1"></div>
-<div class="bubble2"></div>
-<div class="bubble3"></div>
-<div class="bubble4"></div>
-<div class="bubble5"></div>
-  <form class="form2">
-    <h4>Let's Talk</h4>
-    <h2>Speak With Our Expert!</h2>
-    <div class="input-group">
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-    </div>
-    <div class="input-group">
-        <input type="text" placeholder="Mobile">
-        <input type="text" placeholder="Tell us more about our project">
-    </div>
-    <br>
-    <button type="submit" class="form-button">Send Request</button>
-</form>
-
-<!-- <div class="bubble4"></div> -->
-</div>
-
-  <footer class="footer">
-    <div class="footer-container">
-        <div class="footer-col">
-          <a class="navbar-brand ms-5" href="#"></a>
-            <span class="display-4 d-block">CATCH<span class="orange">W8</span></span>
-            <small class="d-block subtitle">COMPLETE CATCHWEIGHT MANAGEMENT ERP</small>
-        </a>
-            <p>Technaureus Info Solutions Pvt. Ltd. KSITIL Special Economic Zone, Unit No. 2E Second Floor, Sahya Building Govt. Cyberpark, Nellikode PO, Kozhikode, Kerala 673016</p>
-            <p>© Copyright 2022 Technaureus Info Solutions Pvt. Ltd.</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Our Industry</h4>
-          <div class="industry-columns">
-            <ul class="industry-list">
-              <li><a href="#">Dairy Industry</a></li>
-              <li><a href="#">Fruits & Vegetables</a></li>
-              <li><a href="#">Meat Industry</a></li>
-              <li><a href="#">Poultry Industry</a></li>
-            </ul>
-            <ul class="industry-list">
-              <li><a href="#">Seafood Industry</a></li>
-              <li><a href="#">Fabric Industry</a></li>
-              <li><a href="#">Live Stock</a></li>
-            </ul>
+      <div class="slider">
+          <div class="slide">
+            <img class="imgs" src="customer1.png" alt="Slide 1">
+          <br>
+          I recommend working with Technaureus. The team is professional and always responding to my requests & feedbacks. They helped me with<br>
+          the implementation of specific modules on Odoo V13 enterprise. Everything is working fine. Thank you for the good work & keep it UP!<br><br>
+          <h4><b>Odoo ERP Consultant</b></h4>
+          <h6>France</h6>
           </div>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-            <div class="industry-columns">
-              <ul class="industry-list">
-                <li><a href="#">Integration</a></li>
-                <li><a href="#">Clients</a></li>
-                <li><a href="#">Case Study</a></li>
-                <li><a href="#">Tutorials</a></li>
-            </ul>
-            <ul class="industry-list">
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Sitemap</a></li>
-          </ul>
-        </div>
-      <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-         
-        </div>
-    </div>
+          <div class="slide">
+            <img class="imgs" src="customer2.png" alt="Slide 2">
+            <br>
+          I experienced Technaureus as very forward-thinking, supporting and friendly developers. They enhanced their already excellent<br>
+          Catchweight module even more for us, to make it perfectly to our needs. Together, we have set up a high-standard solution which we<br>
+          want to use in various projects. Technaureus helped me out immediately, whenever I faced an issue. I can clearly recommend them! Thank<br>
+          you already for all your efforts!  <br><br>
+          <h4><b>IT Manager</b></h4>
+          <h6>Germany</h6>
+          
+          
+          </div>
+          <div class="slide">
+            <img class="imgs" src="customer3.png" alt="Slide 3">
+            <br>
+            This is my pleasure to work with team Technaureus. The Team is well experienced in Odoo ERP. I have worked with them with odoo 12<br>
+            Enterprise and Odoo Mobile App. I found them that they are very professional and expertise in the domain. And the CatchW8 features they<br>
+            developed helped me a lot in my business. <br><br>
+            <h4><b>CEO</b></h4>
+            <h6>Italy</h6></div>
+      </div>
   </div>
-</footer>
-
-
-
-
   
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Slick Slider JS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $('.slider').slick({
+              // dots: true, // Show dots for navigation
+              infinite: true, // Infinite loop sliding
+              speed: 5000, // Transition speed
+              slidesToShow: 1, // Show 1 slide at a time
+              slidesToScroll: 1, // Scroll 1 slide at a time
+              autoplay: true, // Enable autoplay
+              autoplaySpeed: 2000 // Autoplay speed in milliseconds
+          });
+      });
+  </script>
 
-<!-- External Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <div class="seven">
+        <div class="bubble1"></div>
+        <div class="bubble2"></div>
+        <div class="bubble3"></div>
+        <div class="bubble4"></div>
+        <div class="bubble5"></div>
+        <form class="form2">
+            <h4>Let's Talk</h4>
+            <h2>Speak With Our Expert!</h2>
+            <div class="input-group">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Mobile">
+                <input type="text" placeholder="Tell us more about our project">
+            </div>
+            <br>
+            <button type="submit" class="form-button">Send Request</button>
+        </form>
+    </div>
 
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <span class="display-4 d-block">CATCH<span class="orange">W8</span></span>
+                <small class="d-block subtitle">COMPLETE CATCHWEIGHT MANAGEMENT ERP</small>
+                <p>Technaureus Info Solutions Pvt. Ltd. KSITIL Special Economic Zone, Unit No. 2E Second Floor, Sahya Building Govt. Cyberpark, Nellikode PO, Kozhikode, Kerala 673016</p>
+                <p>© Copyright 2022 Technaureus Info Solutions Pvt. Ltd.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Our Industry</h4>
+                <div class="industry-columns">
+                    <ul class="industry-list">
+                        <li><a href="#">Dairy Industry</a></li>
+                        <li><a href="#">Fruits & Vegetables</a></li>
+                        <li><a href="#">Meat Industry</a></li>
+                        <li><a href="#">Seafood Industry</a></li>
+                        <li><a href="#">Retail Industry</a></li>
+                    </ul>
+                    <ul class="industry-list">
+                        <li><a href="#">Food Industry</a></li>
+                        <li><a href="#">Poultry Industry</a></li>
+                        <li><a href="#">Cosmetics</a></li>
+                        <li><a href="#">Pharmaceuticals</a></li>
+                        <li><a href="#">Beverages</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                items: 3, // Number of items to display
+                margin: 10, // Margin between items
+                nav: true, // Show navigation buttons
+                autoplay: true, // Autoplay feature
+                autoplayTimeout: 3000, // Time between each slide
+                autoplayHoverPause: true, // Pause on hover
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-QFjWNm7SHvVJBNKktDL42yHEn6D3iwZ91ok4ZZ9AOP3hEOk/XKuHQCRH04PfEj43" crossorigin="anonymous"></script>
 </body>
-<script>
-let currentIndex = 0; // Track the current index of the first visible card
-const cardsToShow = 4; // Number of cards to show at a time
-const cards = document.querySelectorAll('.card'); // Get all cards
-const totalCards = cards.length; // Total number of cards
-
-function slideCards() {
-  // Calculate the maximum index where the last set of cards can be shown
-  const maxIndex = totalCards - cardsToShow; 
-
-  currentIndex++; // Move to the next set of cards
-
-  // Ensure currentIndex does not exceed the maximum limit
-  if (currentIndex > maxIndex) { 
-    currentIndex = maxIndex; // Stop at the last valid index
-    clearInterval(slidingInterval); // Stop automatic sliding
-  }
-
-  updateSlider();
-}
-
-function updateSlider() {
-  const container = document.querySelector('.slider-container');
-  const translateValue = currentIndex * -25; // Each card is 25% width
-  container.style.transform = `translateX(${translateValue}%)`;
-}
-
-// Start auto slide every 3 seconds
-let slidingInterval = setInterval(slideCards, 3000);
-
-// Optional: Add a click event to restart sliding from the first card
-document.querySelector('.slider-wrapper').addEventListener('click', () => {
-  currentIndex = 0; // Reset to the first card
-  updateSlider(); // Update the display
-  // Restart sliding if needed
-  slidingInterval = setInterval(slideCards, 3000); // Restart sliding
-});
-
-</script>
-
 </html>
