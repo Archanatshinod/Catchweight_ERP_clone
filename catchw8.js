@@ -33,3 +33,69 @@ $(document).ready(function(){
     ]
   });
 });
+
+// brand names sliding
+$(document).ready(function(){
+  $('.brand-slider').slick({
+    slidesToShow: 6,  // Number of slides to show at once
+    slidesToScroll: 1,  // Number of slides to scroll
+    autoplay: true,  // Enable automatic scrolling
+    autoplaySpeed: 2000,  // Speed of automatic scrolling
+    arrows: true,  // Display navigation arrows
+    // dots: true,  // Show navigation dots
+    infinite: true,  // Enable looping
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2
+        }
+      }
+    ]
+  });
+});
+
+// what we do
+
+$(document).ready(function(){
+  $('.what-we-do-slider').slick({
+    infinite: true,
+    slidesToShow: 3,          // Number of visible slides at a time
+    slidesToScroll: 1,
+    centerMode: true,         // Enables center focus for the middle slide
+    centerPadding: '20px',    // Padding on either side of the center slide
+    autoplay: true,           // Enable auto-slide
+    autoplaySpeed: 2500,      // Auto-slide speed (in milliseconds)
+    // dots: true,               // Enable dots navigation
+    arrows: false,            // Disable navigation arrows
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: '40px',
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,  // Disable center mode for smaller screens
+          centerPadding: '0px'
+        }
+      }
+    ]
+  });
+});

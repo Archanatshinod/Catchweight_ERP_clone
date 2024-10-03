@@ -484,10 +484,6 @@ li{
 //   width: 100%; /* Ensure the image fills the card */
 // }
 
-.fourth{
-  text-align: center;
-  @extend %message-shared;
-}
 
 .seven{
   width: 100%;
@@ -886,4 +882,87 @@ h3 {
   border: 12px solid #cff2fb;
   height: 474px !important;
   @extend .industry-card;
+}
+
+// six brands slides
+
+
+.brand-slider {
+  margin: 20px auto;
+  width: 80%;
+}
+.brand-slider div {
+  text-align: center;
+}
+.brand-slider img {
+  max-width: 60%;
+  height: auto;
+}
+
+
+.fourth {
+  text-align: center;
+  @extend %message-shared;
+  min-height: 600px; /* Increase the minimum height */
+  padding: 20px 0;   /* Add some padding */
+}
+
+
+.what-we-do-slider {
+  padding: 40px 0;
+  background-color: #f7f7f7;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  min-height: 500px; /* Set a larger minimum height for the slider */
+
+
+.slick-slide {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+  transform: scale(0.8); /* Shrinks non-active slides */
+  border-radius: 20px; /* Ensures border radius */
+}
+
+.slick-center {
+  transform: scale(1.0); /* Adjusted scale to prevent too much zoom */
+  opacity: 1;
+  z-index: 2;
+  margin: 0;
+}
+
+.slide-item {
+  width: 80%;
+  height: 60%;  /* Increase height of individual slide items */
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+@media (max-width: 600px) {
+  .slide-item {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-wrapper img {
+    height: auto;
+  }
+}
 }
