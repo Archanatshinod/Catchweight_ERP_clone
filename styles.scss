@@ -583,8 +583,19 @@ li{
   }
 }
 
+.quicklink{
+    list-style: none;
+    margin-bottom: 15px;
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    
+  }
+
+
   .social-icons {
-    margin-top: 20px;
+    margin-top: 30px;
 
     a {
       color: #333;
@@ -608,7 +619,9 @@ li{
   @extend .navbar-brand
 }
 
-
+.links{
+  display: flex;
+}
 
 
 
@@ -907,62 +920,67 @@ h3 {
   padding: 20px 0;   /* Add some padding */
 }
 
-
 .what-we-do-slider {
   padding: 40px 0;
   background-color: #f7f7f7;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
-  min-height: 500px; /* Set a larger minimum height for the slider */
 
+  .slick-list {
+    margin: 15px;
+    height: 800px; /* Adjust the height of the slick-list */
+  }
 
-.slick-slide {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0.6;
-  transform: scale(0.8); /* Shrinks non-active slides */
-  border-radius: 20px; /* Ensures border radius */
-}
+  .slick-slide {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    // opacity: 0.6;
+    transform: scale(0.8); /* Shrinks non-active slides */
+    border-radius: 20px; /* Ensures border radius */
+    height: 70%; /* Adjust height based on slide-item */
+  }
 
-.slick-center {
-  transform: scale(1.0); /* Adjusted scale to prevent too much zoom */
-  opacity: 1;
-  z-index: 2;
-  margin: 0;
-}
+  .slick-center {
+    transform: scale(1.0); /* Active slide has full size */
+    opacity: 1;
+    z-index: 2;
+    margin: 0;
+  }
 
-.slide-item {
-  width: 80%;
-  height: 60%;  /* Increase height of individual slide items */
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-  border-radius: 20px;
-}
-
-.image-wrapper {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 0;
-}
-
-.image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-}
-
-@media (max-width: 600px) {
   .slide-item {
+    width: 100%; /* Make sure the width fills the available space */
+    height: 100%; /* Ensure the height of the div is maintained */
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .image-wrapper {
     width: 100%;
-    height: auto;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0;
   }
 
   .image-wrapper img {
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make the image cover the entire slide */
+    object-position: center; /* Center the image */
+    border-radius: inherit;
   }
-}
+
+  @media (max-width: 600px) {
+    .slide-item {
+      width: 100%;
+      height: auto;
+    }
+
+    .image-wrapper img {
+      height: auto;
+      object-fit: contain; /* Adjust fit for smaller screens */
+    }
+  }
 }

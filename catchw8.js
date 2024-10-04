@@ -41,7 +41,7 @@ $(document).ready(function(){
     slidesToScroll: 1,  // Number of slides to scroll
     autoplay: true,  // Enable automatic scrolling
     autoplaySpeed: 2000,  // Speed of automatic scrolling
-    arrows: true,  // Display navigation arrows
+    // arrows: true,  // Display navigation arrows
     // dots: true,  // Show navigation dots
     infinite: true,  // Enable looping
     responsive: [
@@ -72,30 +72,68 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.what-we-do-slider').slick({
     infinite: true,
-    slidesToShow: 3,          // Number of visible slides at a time
+    slidesToShow: 1,         // Show 1 full slide
+    centerMode: true,        // Center the active slide
+    centerPadding: '20%',    // Show half of the next and previous slides
     slidesToScroll: 1,
-    centerMode: true,         // Enables center focus for the middle slide
-    centerPadding: '20px',    // Padding on either side of the center slide
-    autoplay: true,           // Enable auto-slide
-    autoplaySpeed: 2500,      // Auto-slide speed (in milliseconds)
-    // dots: true,               // Enable dots navigation
-    arrows: false,            // Disable navigation arrows
+    autoplay: true,          // Enable auto-slide
+    autoplaySpeed: 2500,     // Auto-slide speed
+    arrows: false,           // Disable navigation arrows
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024,    // Tablet and small desktops
         settings: {
-          slidesToShow: 3,
-          centerPadding: '40px',
+          slidesToShow: 2,   // Show 2 slides
+          centerPadding: '20%', // Less padding for smaller screens
+          centerMode: true,  // Center the active slide
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,     // Tablets and larger phones
         settings: {
-          slidesToShow: 1,
-          centerMode: false,  // Disable center mode for smaller screens
-          centerPadding: '0px'
+          slidesToShow: 1,   // Show 1 slide
+          centerMode: false, // Disable center mode
+          centerPadding: '0px' // No padding for smaller screens
+        }
+      },
+      {
+        breakpoint: 600,     // Small phones
+        settings: {
+          slidesToShow: 1,   // Show only 1 slide
+          centerMode: false, // Disable center mode
+          centerPadding: '0px' // Remove padding
         }
       }
     ]
   });
+});
+
+// /owl
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel({
+      items: 3, // Number of items to display
+      margin: 10, // Margin between items
+      nav: true, // Show navigation buttons
+      autoplay: true, // Autoplay feature
+      autoplayTimeout: 3000, // Time between each slide
+      autoplayHoverPause: true, // Pause on hover
+  });
+});
+
+
+// //slideer
+$(document).ready(function(){
+  $('.slider').slick({
+      // dots: true, // Show dots for navigation
+      infinite: true, // Infinite loop sliding
+      speed: 5000, // Transition speed
+      slidesToShow: 1, // Show 1 slide at a time
+      slidesToScroll: 1, // Scroll 1 slide at a time
+      autoplay: true, // Enable autoplay
+      autoplaySpeed: 2000 // Autoplay speed in milliseconds
+  });
+});
+
+$(document).ready(function(){
+  $('#myModal').modal('show'); // To show the modal programmatically
 });
