@@ -137,3 +137,21 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('#myModal').modal('show'); // To show the modal programmatically
 });
+
+
+// Show Popup
+document.querySelector('[data-popup-target]').addEventListener('click', function() {
+  document.getElementById('customPopup').style.display = 'flex';
+});
+
+// Close Popup
+document.getElementById('closePopup').addEventListener('click', function() {
+  document.getElementById('customPopup').style.display = 'none';
+});
+
+// Close Popup on Outside Click
+window.addEventListener('click', function(event) {
+  if (event.target === document.getElementById('customPopup')) {
+      document.getElementById('customPopup').style.display = 'none';
+  }
+});
