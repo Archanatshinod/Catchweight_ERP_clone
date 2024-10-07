@@ -12,14 +12,14 @@ $(document).ready(function(){
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1
         }
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1
         }
       },
@@ -83,7 +83,7 @@ $(document).ready(function(){
       {
         breakpoint: 1024,    // Tablet and small desktops
         settings: {
-          slidesToShow: 2,   // Show 2 slides
+          slidesToShow: 1,   // Show 2 slides
           centerPadding: '20%', // Less padding for smaller screens
           centerMode: true,  // Center the active slide
         }
@@ -155,3 +155,9 @@ window.addEventListener('click', function(event) {
       document.getElementById('customPopup').style.display = 'none';
   }
 });
+
+/// chat
+function closeWidget() {
+  const chatWidget = document.querySelector('.chat-widget');
+  chatWidget.style.display = 'none'; // Hides the widget
+}

@@ -37,7 +37,13 @@
                 <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#">Industries</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Integration</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span>Odoo Apps</span></a></li>
+                    <li class="nav-item odoo-apps-item">
+                        <a class="nav-link" href="#">
+                            <img src="head_label.png" alt="Our Products" class="nav-image">
+                            <span>Odoo Apps</span>
+                        </a>
+                    </li>
+                    
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-popup-target>Login</a>
@@ -84,19 +90,24 @@
 
     <!-- Slick Slider JS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+   
+   
     <!-- Main Section -->
     <section class="container-fluid">
         <div class="main mt-5">
+            <div class="join-fix-but">Download Brochure</div>
             <div class="bubble1"></div><br>
             <div class="bubble2"></div>
-            <h1><b>Manage your business with powerful <span>ERP solutions</span></b></h1>
+            <h1><b>Manage your business with<br> powerful <span>ERP solutions</span></b></h1>
             <div class="bubble3"></div>
-            <p>All in one web-based ERP solution enriched with Catchweight inventory feature. Maintain your inventory in dual units of measure. Ideal product for supply chain, FMCG, etc.</p>
+            <p>All in one web-based ERP solution enriched with Catchweight inventory feature. Maintain your inventory in dual units of measure. Ideal <br> product for supply chain, FMCG, etc.</p>
             <div class="bubble4"></div>
-            <form class="form1">
-                <input type="email" placeholder="Email Address" required>
-                <button class="form-button" type="submit"><b>Free Demo</b></button>
-            </form>
+            <div class="free_demo">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Email Address" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><b>Free Demo</b></button>
+              </div>
+            </div>
             <div class="bubble5"></div>
         </div>
         <div class="catch"><h3><b>#1 <span>CATCHWEIGHT </span>SOLUTION SINCE 2017 </b></h3></div>
@@ -186,6 +197,15 @@
         </div>
       
       </div>
+      <div class="buttons-container">
+        <a href="#" class="skype-btn">
+            <img src="skype.png" alt="Skype"> 
+        </a>
+        <span class="separator"></span>
+        <a href="#" class="whatsapp-btn">
+            <i class="fa-brands fa-whatsapp"></i>  &nbsp; WhatsApp
+        </a>
+    </div>
     </div>
 
     <div class="six">
@@ -196,32 +216,45 @@
         <div class="bubble4"></div>
         <div class="bubble5"></div>
       <div class="slider">
-          <div class="slide">
-            <img class="imgs" src="customer1.png" alt="Slide 1">
-          <br>
-          I recommend working with Technaureus. The team is professional and always responding to my requests & feedbacks. They helped me with<br>
-          the implementation of specific modules on Odoo V13 enterprise. Everything is working fine. Thank you for the good work & keep it UP!<br><br>
-          <h4><b>Odoo ERP Consultant</b></h4>
-          <h6>France</h6>
-          </div>
-          <div class="slide">
-            <img class="imgs" src="customer2.png" alt="Slide 2">
+        <div class="slide">
+            <div class="imags">
+                <img src="customer1.png" alt="Customer Profile" class="profile-img">
+                <img src="testimonial.png" alt="Quote Icon" class="quote-icon">
+            </div>
             <br>
-          I experienced Technaureus as very forward-thinking, supporting and friendly developers. They enhanced their already excellent<br>
+            <p>
+                I recommend working with Technaureus. The team is professional and always responding to my requests & feedbacks. They helped me with <br>the implementation of specific modules on Odoo V13 enterprise. Everything is working fine. Thank you for the good work & keep it UP!
+            </p>
+            <br>
+            <h4><b>Odoo ERP Consultant</b></h4>
+            <h6>France</h6>
+        </div>
+        
+          <div class="slide">
+            
+            <div class="imags">
+                <img src="customer2.png" alt="Customer Profile" class="profile-img">
+                <img src="testimonial.png" alt="Quote Icon" class="quote-icon">
+            </div>
+            <br>
+          <p>I experienced Technaureus as very forward-thinking, supporting and friendly developers. They enhanced their already excellent<br>
           Catchweight module even more for us, to make it perfectly to our needs. Together, we have set up a high-standard solution which we<br>
           want to use in various projects. Technaureus helped me out immediately, whenever I faced an issue. I can clearly recommend them! Thank<br>
-          you already for all your efforts!  <br><br>
+          you already for all your efforts! </p> <br><br>
           <h4><b>IT Manager</b></h4>
           <h6>Germany</h6>
           
           
           </div>
           <div class="slide">
-            <img class="imgs" src="customer3.png" alt="Slide 3">
+            <div class="imags">
+                <img src="customer3.png" alt="Customer Profile" class="profile-img">
+                <img src="testimonial.png" alt="Quote Icon" class="quote-icon">
+            </div>
             <br>
-            This is my pleasure to work with team Technaureus. The Team is well experienced in Odoo ERP. I have worked with them with odoo 12<br>
+        <p>This is my pleasure to work with team Technaureus. The Team is well experienced in Odoo ERP. I have worked with them with odoo 12<br>
             Enterprise and Odoo Mobile App. I found them that they are very professional and expertise in the domain. And the CatchW8 features they<br>
-            developed helped me a lot in my business. <br><br>
+            developed helped me a lot in my business. </p><br><br>
             <h4><b>CEO</b></h4>
             <h6>Italy</h6></div>
       </div>
@@ -251,11 +284,11 @@
         <form class="form2">
             <h4>Let's Talk</h4>
             <h2>Speak With Our Expert!</h2>
-            <div class="input-group">
+            <div class="form2-input-group">
                 <input type="text" placeholder="Name">
                 <input type="email" placeholder="Email">
             </div>
-            <div class="input-group">
+            <div class="form2-input-group">
                 <input type="text" placeholder="Mobile">
                 <input type="text" placeholder="Tell us more about our project">
             </div>
@@ -269,7 +302,7 @@
             <div class="footer-col">
                 <span class="display-4 d-block">CATCH<span class="orange">W8</span></span>
                 <small class="d-block subtitle">COMPLETE CATCHWEIGHT MANAGEMENT ERP</small>
-                <p>Technaureus Info Solutions Pvt. Ltd. KSITIL Special Economic Zone, Unit No. 2E Second Floor, Sahya Building Govt. Cyberpark, Nellikode PO, Kozhikode, Kerala 673016</p>
+                <h5>Technaureus Info Solutions Pvt. Ltd. KSITIL Special Economic Zone, Unit No. 2E Second Floor, Sahya Building Govt. Cyberpark, Nellikode PO, Kozhikode, Kerala 673016</h5>
                 <p>© Copyright 2022 Technaureus Info Solutions Pvt. Ltd.</p>
             </div>
             <div class="footer-col">
@@ -277,17 +310,14 @@
                 <div class="industry-columns">
                     <ul class="industry-list">
                         <li><a href="#">Dairy Industry</a></li>
+                        <li><a href="#">Poultry Industry </a></li>
+                        <li><a href="#">Seafood Industry</a></li>
+                        <li><a href="#">Live Stock</a></li>
+                    </ul>
+                    <ul class="industry-list2">
                         <li><a href="#">Fruits & Vegetables</a></li>
                         <li><a href="#">Meat Industry</a></li>
-                        <li><a href="#">Seafood Industry</a></li>
-                        <li><a href="#">Retail Industry</a></li>
-                    </ul>
-                    <ul class="industry-list">
-                        <li><a href="#">Food Industry</a></li>
-                        <li><a href="#">Poultry Industry</a></li>
-                        <li><a href="#">Cosmetics</a></li>
-                        <li><a href="#">Pharmaceuticals</a></li>
-                        <li><a href="#">Beverages</a></li>
+                        <li><a href="#">Fabric Industry</a></li>
                     </ul>
                 </div>
             </div>
@@ -295,18 +325,16 @@
                 <h4>Quick Links</h4>
                 <div class="links">
                     <ul class="quicklink">
-                        <li><a href="#">Dairy Industry</a></li>
-                        <li><a href="#">Fruits & Vegetables</a></li>
-                        <li><a href="#">Meat Industry</a></li>
-                        <li><a href="#">Seafood Industry</a></li>
-                        <li><a href="#">Retail Industry</a></li>
+                        <li><a href="#">Integration</a></li>
+                        <li><a href="#">Case Study</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">News</a></li>
                     </ul>
-                    <ul class="quicklink">
-                        <li><a href="#">Food Industry</a></li>
-                        <li><a href="#">Poultry Industry</a></li>
-                        <li><a href="#">Cosmetics</a></li>
-                        <li><a href="#">Pharmaceuticals</a></li>
-                        <li><a href="#">Beverages</a></li>
+                    <ul class="quicklink2">
+                        <li><a href="#">Clients</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
                     </ul>
                 </div>
             
@@ -318,5 +346,18 @@
             </div>
         </div>
     </footer>
+
+    <div class="chat-widget">
+        <button class="close-button" onclick="closeWidget()">X</button>
+        <!-- "We Are Here!" image (replace with your actual image path) -->
+         <div>
+        <img class="we-are-here" src="chat.svg" alt="We Are Here">
+        
+        <!-- Orange circle containing the chat icon -->
+        <div class="chat-icon-container">
+            <!-- Chat icon inside the orange circle (replace with actual image path) -->
+            <img class="chat-icon" src="tawkto-icon.png" alt="Chat Icon"></div>
+        </div>
+    </div>
 </body>
 </html>
