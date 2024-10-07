@@ -1,4 +1,4 @@
-// Define a variable for the orange color to use consistently
+
 $orange-color: #f89922;
 
 body {
@@ -7,6 +7,9 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
 }
+
+// navbar
+
 .navbar{
   background-color: #f4f7f9;
 }
@@ -15,12 +18,13 @@ body {
   display: block;
 
   .subtitle {
-    font-size: 11px; // Adjust the size here
-    line-height: 1.5; // Optional: control spacing between title and subtitle
+    font-size: 12px; 
+    line-height: 1.5; 
+    font-weight: 500;
   }
 
   .display-4 {
-    font-weight: 600; // Make sure the brand name is bold
+    font-weight: 1000;
   }
 }
 
@@ -29,21 +33,26 @@ body {
 }
 
 .nav-item {
-  font-weight: bold;
+  font-weight: 800;
+  padding: 10px 20px; 
 }
+
+//main section
 
 .main {
   justify-content: center;
   text-align: center;
   width: 60%;
-  padding-right: 15px;
-  padding-left: 15px;
+  // padding-right: 15px;
+  // padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
   @extend %message-shared;
   @extend %bubble
  
 }
+
+
 %message-shared{
     h2,h1 {
         font-size: 70px;
@@ -71,7 +80,7 @@ body {
       }
 }
 
-// General styles for the form
+//form
 form{
   justify-content: space-between;
   background-color: white;
@@ -80,7 +89,7 @@ form{
   margin-left: auto;
   margin-right: auto;
   border-radius: 50px;
-  // flex-wrap: wrap; // Ensure content wraps on smaller screens
+  flex-wrap: wrap; // Ensure content wraps on smaller screens
 
   .form-button {
     background-color: $orange-color;
@@ -88,8 +97,8 @@ form{
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    height: 100%;
-    padding: 20px 30px; // Ensures some padding around the button
+    height: 50%;
+    padding: 20px 20px; // Ensures some padding around the button
     outline: none;
   }
 
@@ -485,25 +494,15 @@ li{
 // }
 
 
-.seven{
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ccc;
-  position: relative;
-  
-  @extend %bubble
-  
-}
-
-
+/* Base styles */
 .form2 {
   text-align: center;
-  width: 50%;
+  width: 50%; /* Default form width for larger screens */
   margin: 0 auto;
   padding: 30px;
   margin-bottom: 10%;
   background-color: white;
-  z-index: 1; // Keep form on top of bubbles
+  z-index: 1; /* Keep form on top of bubbles */
 
   h4, h2 {
     margin-bottom: 20px;
@@ -516,36 +515,68 @@ li{
     margin-bottom: 20px;
 
     input {
-      width: 45%; // Each input will take up 45% of the width
+      width: 45%; /* Each input takes up 45% of the width on larger screens */
       padding: 10px 0;
       border: none;
-      border-bottom: 2px solid #ccc; // Only bottom border for the underline effect
-      outline: none; // Remove outline on focus
-      background: none; // Ensure no background for cleaner look
+      border-bottom: 2px solid #ccc; /* Only bottom border for the underline effect */
+      outline: none; /* Remove outline on focus */
+      background: none; /* Ensure no background for cleaner look */
       font-size: 16px;
-
-     
     }
   }
-  
 }
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .form2 {
+    width: 80%; /* Increase form width to 80% on smaller screens */
+  }
+
+  .input-group {
+    flex-direction: column; /* Stack the inputs vertically */
+
+    input {
+      width: 100%; /* Input fields take full width on smaller screens */
+      margin-bottom: 20px; /* Add space between the input fields */
+    }
+  }
+}
+
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+  .form2 {
+    width: 100%; /* Further increase form width for very small screens */
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .input-group {
+    margin-top: 30px; /* Reduce top margin for smaller screens */
+    
+    input {
+      font-size: 14px; /* Slightly reduce font size on very small screens */
+      padding: 4px 0; /* Adjust padding to fit smaller inputs */
+      width: 100%; /* Ensure input fields take full width */
+    }
+  }
+}
+
 
 .footer-container {
   display: flex;
   justify-content: space-between;
-  // max-width: 1200px;
   margin-top: 5%;
-  // margin: 0 auto;
   padding: 0 20px;
 }
 
+
 .footer-col {
   flex-basis: 40%;
-  padding: 0 20px; // Padding for space between text and border
+  padding: 0 20px;
   position: relative;
   margin: 0;
+
   &:not(:last-child) {
-    border-right: 1px solid #ccc; // Add border to all columns except the last one
+    border-right: 1px solid #ccc; /* Add border to all columns except the last one */
   }
 
   h4 {
@@ -560,12 +591,74 @@ li{
   }
 
   .industry-columns {
-    display: flex; // Set to flex to create two columns
+    display: flex; /* Set to flex to create two columns */
 
     .industry-list {
       list-style: none;
       padding: 0;
-      margin: 0 10px; // Space between columns
+      margin: 0 10px; /* Space between columns */
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          color: #333;
+          text-decoration: none;
+          font-size: 14px;
+
+          &:hover {
+            color: #ff9933;
+          }
+        }
+      }
+    }
+  }
+}
+
+.quicklink {
+  list-style: none;
+  margin-bottom: 15px;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.social-icons {
+  margin-top: 30px;
+
+  a {
+    color: #333;
+    font-size: 20px;
+    margin-right: 10px;
+    text-decoration: none;
+
+    &:hover {
+      color: #ff9933;
+    }
+  }
+}
+
+.footer {
+  text-align: left;
+
+  p {
+    font-size: 20px;
+    color: #999;
+  }
+}
+
+/* Updated links section to exactly match industry-columns */
+.links {
+  display: flex; /* Two-column layout */
+  padding: 0;
+  margin: 0;
+
+  .quicklink {
+    list-style: none;
+    padding: 0;
+    margin: 0 10px; /* Space between columns */
 
     li {
       margin-bottom: 10px;
@@ -583,44 +676,46 @@ li{
   }
 }
 
-.quicklink{
-    list-style: none;
-    margin-bottom: 15px;
-    a{
-      text-decoration: none;
-      color: black;
-    }
-    
+/* Media Query for Small Screen Sizes */
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column; /* Stack the columns vertically */
+    align-items: center; /* Center the content horizontally */
   }
 
+  .footer-col {
+    flex-basis: 100%;
+    padding: 0;
+    margin-bottom: 20px; /* Add space between stacked columns */
+    text-align: center; /* Center text on smaller screens */
+    border-right: none !important; /* Ensure the border is removed */
+  }
 
+  /* Industry columns stacked vertically on smaller screens */
+  .industry-columns {
+    flex-direction: column; /* Stack the industry lists vertically */
+    align-items: center; /* Center the lists */
+  }
+
+  .industry-list {
+    margin-bottom: 10px; /* Add space between the lists */
+  }
+
+  /* Links section now behaves like industry-columns on small screens */
+  .links {
+    flex-direction: column; /* Stack the quick links vertically */
+    align-items: center; /* Center the quick links */
+  }
+
+  .quicklink {
+    margin-bottom: 10px; /* Add space between the lists */
+  }
+
+  /* Adjust margin for social icons */
   .social-icons {
-    margin-top: 30px;
-
-    a {
-      color: #333;
-      font-size: 20px;
-      margin-right: 10px;
-      text-decoration: none;
-
-      &:hover {
-        color: #ff9933;
-      }
-    }
+    margin-top: 20px; /* Adjust margin for social icons on smaller screens */
   }
-}
-
-.footer {
-   text-align: left;
-  p {
-    font-size: 20px;
-    color: #999;
-  }
-  @extend .navbar-brand
-}
-
-.links{
-  display: flex;
 }
 
 
@@ -757,42 +852,101 @@ li{
 .six {
   text-align: center; /* Center the heading */
   position: relative;
+  flex-wrap: wrap;
   h3{
     padding-bottom: 50px;
   }
   @extend %bubble;
 }
-
 .slider {
   width: 80%; /* Adjust as needed */
   margin: 0 auto; /* Center the slider in the container */
   
-  
 }
 
 .slide {
-  // background-color: #f89922;
-  display: flex; /* Use Flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: auto; /* Set a height for the slides */
-  position: relative; /* Position relative for child elements */
-
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative; /* Enable absolute positioning for child elements */
 }
 
-.imgs {
-  width: 20%;
-  height: auto;
+.imags {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px; /* Adjust size as needed */
+  height: 200px;
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  vertical-align: middle;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-h3 {
-  text-align: center; /* Center the heading */
+.quote-icon {
+  position: absolute;
+  bottom: 10px; /* Adjust the position as needed */
+  right: 10px;
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid white; /* Optional border */
 }
+
+p {
+  margin: 20px 0;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .imags {
+      width: 120px; /* Make the profile image smaller on small screens */
+      height: 120px;
+  }
+
+  .quote-icon {
+      width: 30px; /* Make the quote icon smaller */
+      height: 30px;
+      bottom: 5px; /* Adjust the position for smaller screens */
+      right: 5px;
+  }
+
+  p {
+      font-size: 14px; /* Reduce font size for smaller screens */
+  }
+
+  h4, h6 {
+      font-size: 16px; /* Adjust heading sizes */
+  }
+}
+
+/* Media Query for extra small screens (mobile) */
+@media (max-width: 480px) {
+  .imags {
+      width: 100px; /* Further reduce the size for mobile */
+      height: 100px;
+  }
+
+  .quote-icon {
+      width: 25px;
+      height: 25px;
+  }
+
+  p {
+      font-size: 12px; /* Smaller font size for mobile */
+  }
+
+  h4, h6 {
+      font-size: 14px;
+  }
+}
+
+
 
 
 
@@ -929,7 +1083,7 @@ h3 {
 
   .slick-list {
     margin: 15px;
-    height: 800px; /* Adjust the height of the slick-list */
+    // height: 800px; /* Adjust the height of the slick-list */
   }
 
   .slick-slide {
@@ -1017,4 +1171,137 @@ h3 {
   right: 10px;
   font-size: 20px;
   cursor: pointer;
+}
+
+.join-fix-but{
+position: fixed;
+left: -66px;
+top: 67%;
+border: solid 2px #f79924;
+background-color: #f79924;
+color: #fff;
+/* width: 150px; */
+padding: 8px;
+text-align: center;
+vertical-align: top;
+z-index: 10;
+
+transform: rotate(-90deg);
+
+}
+
+// whatsapp skype
+
+.buttons-container {
+  display: flex;
+  // align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 0;
+
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+}
+
+.skype-btn {
+  color: #00AFF0;
+
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  font-size: large;
+  padding: 10px 20px;
+  border-radius: 45px;
+  font-weight: bolder;
+  .fa-brands{
+   
+    font-weight: bolder;
+    // height: 3px;
+    // width: 3px;
+    // size: 10px;
+  }
+}
+
+.skype-btn img {
+  width: 150px;
+  height: 70px;
+  margin-right: 10px;
+}
+
+.separator {
+  height: 70px;
+  width: 2px;
+  background-color: #ddd;
+  margin: 0 30px;
+}
+}
+
+
+// //chatttt
+
+/* Container for the chat widget */
+.chat-widget {
+  position: fixed; /* Keeps widget in place on the page even on scroll */
+  right: 0px; /* Distance from the right edge of the screen */
+  // justify-content: right;
+  bottom: 20px; /* Distance from the bottom edge of the screen */
+  width: 150px; /* Width of the entire widget */
+  height: 150px; /* Height of the entire widget */
+  z-index: 9999; /* Ensure it's above other content */
+}
+
+/* "We Are Here!" image */
+.we-are-here {
+  position: absolute;
+  top: 0;
+  left: 10px; /* Adjust left positioning as needed */
+  width: 100px; /* Adjust image size */
+  z-index: 1;
+}
+
+/* Orange circle for chat icon */
+.chat-icon-container {
+  position: absolute;
+  top: 8px;
+  // bottom: 4px;
+  left: 30px;
+  width: 70px;
+  height: 70px;
+  // background-color: #FFA500; /* Orange color */
+  border-radius: 50%; /* Circle shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Chat icon inside the orange circle */
+.chat-icon {
+  width: 40px; /* Adjust the size of the chat icon */
+  height: 40px;
+}
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  // background-color: #FF5733; /* Red color for close button */
+  color: black; /* Text color */
+  border: none; /* No border */
+  border-radius: 50%; /* Round shape */
+  width: 25px; /* Button size */
+  height: 25px;
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size for close icon */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s; /* Smooth transition for visibility */
+}
+.chat-widget:hover .close-button,
+.chat-widget:focus-within .close-button {
+    opacity: 1; /* Show the button */
 }
