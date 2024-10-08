@@ -1,4 +1,4 @@
-// Define a variable for the orange color to use consistently
+
 $orange-color: #f89922;
 
 body {
@@ -7,20 +7,29 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
 }
+.p{
+  font-size: 18px;
+}
+// navbar
+
 .navbar{
   background-color: #f4f7f9;
 }
 .navbar-brand {
   text-align: center;
   display: block;
-
+  span{
+    font-size: 53px;
+    width: 100%;
+  }
   .subtitle {
-    font-size: 11px; // Adjust the size here
-    line-height: 1.5; // Optional: control spacing between title and subtitle
+    font-size: 12px; 
+    line-height: 1.5; 
+    font-weight: 500;
   }
 
   .display-4 {
-    font-weight: 600; // Make sure the brand name is bold
+    font-weight: 1000;
   }
 }
 
@@ -29,26 +38,130 @@ body {
 }
 
 .nav-item {
-  font-weight: bold;
+  font-weight: 800;
+  padding: 10px 20px; 
+  font-size: 20px;
 }
+
+
+.odoo-apps-item {
+  position: relative; 
+}
+
+.nav-image {
+  position: absolute;
+  top: -10px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto; 
+}
+
+.nav-item .nav-link {
+  display: block;
+  text-align: center; 
+}
+
+/// 
+/// 
+/// 
+/// 
+//
+
+
+// Bubble animations and positioning
+@mixin bubble{
+  #bubble-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .bubble1, .bubble2, .bubble3, .bubble4, .bubble5 {
+    border-radius: 50%;
+    position: absolute;
+    z-index: -9;
+    animation: bubblePulse 5s infinite ease-in-out;
+  }
+  
+  .bubble1 {
+    width: 30px;
+    height: 30px;
+    background-color: #FEBE00;
+    top: 25%;
+    right: 20%;
+  }
+  
+  .bubble2 {
+    width: 18px;
+    height: 18px;
+    background-color: $orange-color;
+    top: 30%;
+    left: 18%;
+  }
+  
+  .bubble3 {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(0, 123, 255, 0.8);
+    top: 40%;
+    right: 15%;
+  }
+  
+  .bubble4 {
+    width: 25px;
+    height: 25px;
+    background-color: rgb(199, 47, 47);
+    top: 50%;
+    left: 12%;
+  }
+  
+  .bubble5 {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(110, 18, 196);
+    top: 60%;
+    right: 18%;
+  }
+  
+  @keyframes bubblePulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(2); 
+      opacity: 0.5;
+    }
+  }
+  }
+
+//main section
 
 .main {
   justify-content: center;
   text-align: center;
-  width: 60%;
-  padding-right: 15px;
-  padding-left: 15px;
+  // width: 60%;
+  // padding-right: 15px;
+  // padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
   @extend %message-shared;
-  @extend %bubble
+  @media (min-width: 768px) {
+
+      @include bubble;
+  }
+  
  
 }
+
+
 %message-shared{
     h2,h1 {
         font-size: 70px;
         color: #333;
         font-weight: 700;
+        // z-index: 5;
         
     }
     h1{
@@ -63,6 +176,7 @@ body {
         margin: 20px 0;
         font-size: 18px;
         color: #666;
+        // z-index: 8;
       }
       h3{
         font-size: 50px;
@@ -71,153 +185,93 @@ body {
       }
 }
 
-// General styles for the form
-form{
+//form
+
+form {
   justify-content: space-between;
-  background-color: white;
-  width: 60%;
-  // max-width: 600px;
+  background-color: transparent;
+  // width: 60%; 
+  height: auto;
   margin-left: auto;
   margin-right: auto;
   border-radius: 50px;
-  // flex-wrap: wrap; // Ensure content wraps on smaller screens
+  // flex-wrap: wrap; 
 
   .form-button {
-    background-color: $orange-color;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    height: 100%;
-    padding: 20px 30px; // Ensures some padding around the button
-    outline: none;
+      background-color: $orange-color;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      height: auto;
+      padding: 20px 30px; 
+      outline: none;
   }
-
-}
-.form1{
-  display: flex;
-  
-  input {
-    font-size: 16px;
-    border: none;
-    background-color: transparent;
-    flex: 1; // Make input take up the remaining space
-    padding: 20px; // Add some padding for a better look
-  }
-
-
-  input:focus {
-    outline: none;
-    border: none;
-    box-shadow: none;
-  }
-
-
 }
 
-// Media queries for responsiveness
+// free demo  
+.input-group {
+  background-color: white;
+  width: 30%; 
+  border-radius: 50px !important;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex; 
+  align-items: center; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  // padding: 5px; 
+  box-sizing: border-box; 
+
+  .form-control {
+    border: none;
+    padding: 15px; 
+    font-size: 16px; 
+    background-color: transparent; 
+    height: 100%; 
+    border-radius: 50px 0 0 50px; 
+    box-sizing: border-box; 
+    flex: 1; 
+  }
+
+  .btn {
+    background-color: #f89922; 
+    color: white;
+    border: none;
+    border-radius:50px !important; 
+    padding: 15px 30px; 
+    cursor: pointer; 
+    white-space: nowrap; 
+    box-sizing: border-box; 
+  }
+}
+
 @media (max-width: 768px) {
-  form {
-    width: 100%; // Make the form narrower on tablets
-    // padding: 15px;
-    flex-direction: row;
+  .input-group {
+    width: 100% !important; 
   }
 
-  form input {
-    font-size: 14px; // Adjust input size for smaller screens
-    flex-shrink: 0;
-  }
-}
-
-@media (max-width: 576px) {
-  form {
-    width: 100%; // Make the form even narrower on small screens
-    // padding: 10px;
-    flex-direction: row; // Stack input and button vertically
+  .form-control {
+    font-size: 14px; 
+    padding: 10px; 
   }
 
-  form input {
-    width: 100%; // Make input take full width
-    margin-bottom: 10px; // Add spacing between input and button
-    flex-shrink: 0;
-  }
-
-  .form-button {
-    width: 100%; // Make the button take full width
+  .btn {
+    padding: 10px 20px; 
+    font-size: 14px; 
   }
 }
 
-.email-input:focus {
-  box-shadow: none;
-  outline: none; // Ensure no outline appears on focus
-}
 
-// Bubble animations and positioning
-%bubble{
-#bubble-container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.bubble1, .bubble2, .bubble3, .bubble4, .bubble5 {
-  border-radius: 50%;
-  position: absolute;
-  animation: bubblePulse 5s infinite ease-in-out;
-}
-
-.bubble1 {
-  width: 30px;
-  height: 30px;
-  background-color: #FEBE00;
-  top: 25%;
-  right: 20%;
-}
-
-.bubble2 {
-  width: 18px;
-  height: 18px;
-  background-color: $orange-color;
-  top: 30%;
-  left: 18%;
-}
-
-.bubble3 {
-  width: 15px;
-  height: 15px;
-  background-color: rgba(0, 123, 255, 0.8);
-  top: 40%;
-  right: 15%;
-}
-
-.bubble4 {
-  width: 25px;
-  height: 25px;
-  background-color: rgb(199, 47, 47);
-  top: 50%;
-  left: 12%;
-}
-
-.bubble5 {
-  width: 10px;
-  height: 10px;
-  background-color: rgb(110, 18, 196);
-  top: 60%;
-  right: 18%;
-}
-
-@keyframes bubblePulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(2); // Makes the bubble bigger
-    opacity: 0.5; // Slight fade
+@media (max-width: 480px) {
+  .input-group {
+    width: 100% !important;  
   }
 }
-}
+
+
+
+
 .catch {
   width: 100%;
   justify-content: center;
@@ -228,7 +282,8 @@ form{
 li{
   @extend %message-shared;
 }
-/* ROJO POGI PLAY BUTTON */
+
+// video play button animation
 
 .video-play-button {
   position: absolute;
@@ -240,7 +295,6 @@ li{
   display: block;
   width: 32px;
   height: 44px;
-  /* background: #fa183d; */
   border-radius: 50%;
   padding: 18px 20px 18px 28px;
 }
@@ -373,27 +427,32 @@ li{
   box-shadow: 0 0 15px rgba(0,0,0,0.75);
 }
 
-/* ENTRANCE ANIMATION OF THE PLAY BUTTON */
 
 .video-play-button {
   -webkit-animation: scale-up-center 1s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
   animation: scale-up-center 1s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
 
-  top: 46%;
-  /* Set your desired initial colors */
-  background-color: #fa183d !important; /* Force the background color */
-  color: white !important;              /* Force the text/icon color */
-  border: none; /* Prevent any border color changes */
-
-  /* Ensure no transitions occur */
+  position: absolute;
+  z-index: 10;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Ensure it stays centered */
+  box-sizing: content-box;
+  display: block;
+  width: 32px;
+  height: 44px;
+  border-radius: 50%;
+  padding: 18px 20px 18px 28px;
+  background-color: #fa183d !important; 
+  color: white !important;           
+  border: none; 
   transition: none !important;
 
-  /* Disable hover, focus, and active effects */
   &:hover, &:focus, &:active {
-    background-color: #fa183d !important;  /* Prevent background color change */
-    color: white !important;               /* Prevent text/icon color change */
-    border: none !important;               /* Prevent border change */
-    transition: none !important;           /* Disable transitions on hover */
+    background-color: #fa183d !important;  
+    color: white !important;              
+    border: none !important;               
+    transition: none !important;           
   }
 }
 
@@ -408,23 +467,27 @@ li{
     transform: scale(1);
   }
 }
-.second{
-  // background-image: url('dashboard.png');
 
+// second div
+
+.second{
+  display: flex;
   justify-content: center;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  // padding-top: 50%;
+  align-items: center;
   position: relative;
-  // padding-left: 350px;
+  width: 100%;
+  height: auto;
+  text-align: center;
 }
 .reduced-width {
-  width: 60%; /* Adjust this value as needed */
-  max-width: 1600px; /* Optional: Limit max width */
-  margin: 0 auto; /* Center the image */
-  display: block; /* Ensure it behaves like a block element */
+  width: 60%; 
+  max-width: 1600px; 
+  margin: 0 auto; 
+  display: block; 
+  position: relative; 
 }
+
+// third section
 
 .third {
   display: flex;
@@ -432,368 +495,35 @@ li{
 
   h3,
   p {
-    text-align: left; // Align heading and paragraph to the left
-    margin-left: 0; // No extra margin
+    text-align: left; 
+    // margin-left: 0; 
+    left: 5px;
+    padding-left: 15px;
     
   }
+  
 
   .slider-wrapper {
-    margin-top: 20px; // Space between paragraph and slider
+    margin-top: 20px; 
   }
 
   .form-button {
-    align-self: center; // Center the button
-    margin-top: 20px; // Optional spacing above button
+    align-self: center; 
+    margin-top: 20px; 
     background-color: $orange-color;
     color: #fff;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     height: 100%;
-    padding: 20px 30px; // Ensures some padding around the button
+    padding: 20px 30px; 
     outline: none;
+    margin-bottom: 50px;
     
   }
   @extend %message-shared;
   
 }
-
-  
-  
-
-
-// .slider-wrapper {
-//   position: relative;
-//   overflow: hidden; /* Hide overflow */
-//   width: 100%; /* Full width for the slider */
-//   padding: 10px 0; /* Padding to give space for card */
-// }
-
-// .slider-container {
-//   display: flex;
-//   transition: transform 0.5s ease; /* Smooth transition for sliding */
-//   width: 100%; /* Set the width for container */
-// }
-
-// .card {
-//   flex: 0 0 25%; /* Each card takes up 25% of the width */
-//   margin-right: 10px; /* Space between cards */
-// }
-
-// .card img {
-//   width: 100%; /* Ensure the image fills the card */
-// }
-
-
-.seven{
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ccc;
-  position: relative;
-  
-  @extend %bubble
-  
-}
-
-
-.form2 {
-  text-align: center;
-  width: 50%;
-  margin: 0 auto;
-  padding: 30px;
-  margin-bottom: 10%;
-  background-color: white;
-  z-index: 1; // Keep form on top of bubbles
-
-  h4, h2 {
-    margin-bottom: 20px;
-  }
-
-  .input-group {
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-
-    input {
-      width: 45%; // Each input will take up 45% of the width
-      padding: 10px 0;
-      border: none;
-      border-bottom: 2px solid #ccc; // Only bottom border for the underline effect
-      outline: none; // Remove outline on focus
-      background: none; // Ensure no background for cleaner look
-      font-size: 16px;
-
-     
-    }
-  }
-  
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  // max-width: 1200px;
-  margin-top: 5%;
-  // margin: 0 auto;
-  padding: 0 20px;
-}
-
-.footer-col {
-  flex-basis: 40%;
-  padding: 0 20px; // Padding for space between text and border
-  position: relative;
-  margin: 0;
-  &:not(:last-child) {
-    border-right: 1px solid #ccc; // Add border to all columns except the last one
-  }
-
-  h4 {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.8;
-  }
-
-  .industry-columns {
-    display: flex; // Set to flex to create two columns
-
-    .industry-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 10px; // Space between columns
-
-    li {
-      margin-bottom: 10px;
-
-      a {
-        color: #333;
-        text-decoration: none;
-        font-size: 14px;
-
-        &:hover {
-          color: #ff9933;
-        }
-      }
-    }
-  }
-}
-
-.quicklink{
-    list-style: none;
-    margin-bottom: 15px;
-    a{
-      text-decoration: none;
-      color: black;
-    }
-    
-  }
-
-
-  .social-icons {
-    margin-top: 30px;
-
-    a {
-      color: #333;
-      font-size: 20px;
-      margin-right: 10px;
-      text-decoration: none;
-
-      &:hover {
-        color: #ff9933;
-      }
-    }
-  }
-}
-
-.footer {
-   text-align: left;
-  p {
-    font-size: 20px;
-    color: #999;
-  }
-  @extend .navbar-brand
-}
-
-.links{
-  display: flex;
-}
-
-
-
-.six{
-  text-align: center;
-  padding-top: 5%;
-  @extend %message-shared
-}
-
-.modal-body{
-  .form-button{
-    width: 30%;
-    padding: 5px;
-  }
-}
-
-// // 
-// .slider-wrapper {
-//   max-width: 100%;
-//   margin: 0 auto;
-//   padding: 20px 0;
-//   overflow: hidden; 
-//   position: relative; 
-// }
-
-// .slider-container {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   position: relative; 
-//   width: 100%; 
-
-// .slick-track {
-//   display: flex !important; 
-//   transform: none !important; 
-// }
-
-// .slick-slide {
-//   width: 100% !important; 
-//   box-sizing: border-box;
-// }
-
-// .card {
-//   padding: 20px;
-//   text-align: center;
-//   margin: 0 10px;
-//   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-//   border-radius: 5px;
-//   width: 100%; 
-// }
-// }
-
-// .carousel-item img {
-//   height: 500px;
-//   object-fit: cover;
-// }
-
-// Carousel styles
-// Carousel styles
-.slider-wrapper {
-  position: relative;
-  overflow: hidden; /* Hide overflow */
-  width: 100%; /* Full width for the slider */
-  padding: 20px 0; /* Padding to give space for the cards */
-}
-
-.slider-container {
-  display: flex;
-  transition: transform 0.5s ease; /* Smooth transition for sliding */
-  width: 100%; /* Set the width for the container */
-}
-
-.carousel-item {
-  flex: 0 0 30%; /* Each item takes up 30% of the width */
-  margin: 0 5px; /* Space between items */
-  position: relative; /* Ensure positioning for overlays if needed */
-  transition: transform 0.5s, box-shadow 0.5s, opacity 0.5s; /* Smooth transition for elevation and shadow */
-  border-radius: 10px; /* Rounded corners for items */
-  opacity: 0.5; /* Dimmed effect by default */
-}
-
-.carousel-item img {
-  width: 100%; /* Ensure the image fills the item */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure images cover the entire area */
-}
-
-.carousel-item.active {
-  transform: scale(1.1); /* Scale the active item */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow effect for active item */
-  opacity: 1; /* Full opacity for the active item */
-}
-
-.carousel-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-}
-
-.carousel-controls .prev,
-.carousel-controls .next {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  padding: 10px; /* Adjust padding as needed */
-  z-index: 10; /* Ensure buttons are on top */
-  transition: background-color 0.3s; /* Transition for hover effect */
-}
-
-// .carousel-controls .prev:hover,
-// .carousel-controls .next:hover {
-//   background-color: rgba(255, 255, 255, 1); /* Full white on hover */
-// }
-
-/* Optional: Media queries for responsiveness */
-@media (max-width: 768px) {
-  .carousel-item {
-    flex: 0 0 80%; /* Each item takes up more width on smaller screens */
-  }
-}
-
-@media (max-width: 576px) {
-  .carousel-item {
-    flex: 0 0 100%; /* Each item takes full width on small screens */
-  }
-}
- 
-//
-.six {
-  text-align: center; /* Center the heading */
-  position: relative;
-  h3{
-    padding-bottom: 50px;
-  }
-  @extend %bubble;
-}
-
-.slider {
-  width: 80%; /* Adjust as needed */
-  margin: 0 auto; /* Center the slider in the container */
-  
-  
-}
-
-.slide {
-  // background-color: #f89922;
-  display: flex; /* Use Flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: auto; /* Set a height for the slides */
-  position: relative; /* Position relative for child elements */
-
-  
-}
-
-.imgs {
-  width: 20%;
-  height: auto;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h3 {
-  text-align: center; /* Center the heading */
-}
-
 
 
 .industry-slider {
@@ -806,22 +536,22 @@ h3 {
 .industry-card {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  align-items: center;     /* Center content horizontally */
+  justify-content: center; 
+  align-items: center;    
   text-align: center;
   padding: 30px;
   background-color: #fff;
   border-radius: 27px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   margin: 0 15px;
-  height: 500px !important; /* Force the height with !important */
+  height: 500px !important; 
   box-sizing: border-box;
 }
 
 .industry-card img {
-  width: 90%;  /* Adjust the size of the image relative to the card's width */
-  height: auto; /* Maintain the aspect ratio */
-  max-width: 100%; /* Prevent the image from growing beyond the card */
+  width: 90%;  
+  height: auto; 
+  max-width: 100%; 
   margin-bottom: 15px;
   display: block;
   margin-left: auto;
@@ -837,6 +567,7 @@ h3 {
   color: white;
   border-top:3px solid white;
   padding-top: 20px; 
+  margin-bottom: 10px;
 }
 
 .slick-slide {
@@ -847,77 +578,63 @@ h3 {
   margin: 0 -15px;
 }
 
-/* Custom styling for individual cards */
+// Custom styling for individual cards 
 .industry-card1 {
   background-color: #f59c74;
   border: 12px solid #f5e3da;
-  height: 474px !important;
+  // height: 474px !important;
   @extend .industry-card;
 }
 
 .industry-card2 {
   background-color: #6081db;
   border: 12px solid #dee6fc;
-  height: 474px !important;
+  // height: 474px !important;
   @extend .industry-card;
 }
 
 .industry-card3 {
   background-color: #80c56c;
   border: 12px solid #d5e8cf;
-  height: 474px !important;
+  // height: 474px !important;
   @extend .industry-card;
 }
 
 .industry-card4 {
   background-color: #e54444;
   border: 12px solid #fcd5d5;
-  height: 474px !important;
+  // height: 474px !important;
   @extend .industry-card;
 }
 
 .industry-card5 {
   background-color: #a26a50;
   border: 12px solid #f5e3da;
-  height: 474px !important;
+  // height: 474px !important;
   @extend .industry-card;
 }
 
 .industry-card6 {
   background-color: #ee5858;
   border: 12px solid #fcdede;
-  height: 474px !important;
+  // height: 474px !important;
   @extend .industry-card;
 }
 
 .industry-card7 {
   background-color: #74daf5;
   border: 12px solid #cff2fb;
-  height: 474px !important;
+  // height: 474px !important;
   @extend .industry-card;
 }
 
-// six brands slides
-
-
-.brand-slider {
-  margin: 20px auto;
-  width: 80%;
-}
-.brand-slider div {
-  text-align: center;
-}
-.brand-slider img {
-  max-width: 60%;
-  height: auto;
-}
-
+// fourth section 
 
 .fourth {
   text-align: center;
   @extend %message-shared;
-  min-height: 600px; /* Increase the minimum height */
-  padding: 20px 0;   /* Add some padding */
+  min-height: 600px; 
+  padding: 20px 0;  
 }
 
 .what-we-do-slider {
@@ -929,27 +646,27 @@ h3 {
 
   .slick-list {
     margin: 15px;
-    height: 800px; /* Adjust the height of the slick-list */
+    // height: 800px; 
   }
 
   .slick-slide {
     transition: transform 0.3s ease, opacity 0.3s ease;
     // opacity: 0.6;
-    transform: scale(0.8); /* Shrinks non-active slides */
-    border-radius: 20px; /* Ensures border radius */
-    height: 70%; /* Adjust height based on slide-item */
+    transform: scale(0.8); 
+    border-radius: 20px; 
+    height: 70%; 
   }
 
   .slick-center {
-    transform: scale(1.0); /* Active slide has full size */
+    transform: scale(1.0); 
     opacity: 1;
     z-index: 2;
     margin: 0;
   }
 
   .slide-item {
-    width: 100%; /* Make sure the width fills the available space */
-    height: 100%; /* Ensure the height of the div is maintained */
+    width: 100%; 
+    height: 100%; 
     position: relative;
     margin: 0;
     overflow: hidden;
@@ -967,8 +684,8 @@ h3 {
   .image-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Make the image cover the entire slide */
-    object-position: center; /* Center the image */
+    object-fit: cover; 
+    object-position: center; 
     border-radius: inherit;
   }
 
@@ -980,11 +697,549 @@ h3 {
 
     .image-wrapper img {
       height: auto;
-      object-fit: contain; /* Adjust fit for smaller screens */
+      object-fit: contain; 
     }
   }
 }
 
+// customer section
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden; 
+  width: 100%; 
+  padding: 20px 0; 
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease; 
+  width: 100%; 
+}
+
+.carousel-item {
+  flex: 0 0 30%; 
+  margin: 0 5px; 
+  position: relative; 
+  transition: transform 0.5s, box-shadow 0.5s, opacity 0.5s; 
+  border-radius: 10px; 
+  opacity: 0.5; 
+}
+
+.carousel-item img {
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+}
+
+.carousel-item.active {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+  opacity: 1; 
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-controls .prev,
+.carousel-controls .next {
+  background-color: rgba(255, 255, 255, 0.8); 
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 10px; 
+  z-index: 10; 
+  transition: background-color 0.3s; 
+}
+
+// .carousel-controls .prev:hover,
+// .carousel-controls .next:hover {
+//   background-color: rgba(255, 255, 255, 1); 
+// }
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 80%; 
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item {
+    flex: 0 0 100%; 
+  }
+}
+
+
+// six section
+
+.six{
+  text-align: center;
+  padding-top: 5%;
+  position: relative;
+  flex-wrap: wrap;
+  p{
+    font-size: 18px !important;
+  }
+  
+  h3{
+    padding-bottom: 50px;
+  }
+  @extend %message-shared;
+  @media (min-width: 768px) {
+
+    @include bubble;
+}
+}
+.slider {
+  width: 80%; 
+  margin: 0 auto; 
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative; 
+}
+
+.imags {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px; 
+  height: 300px;
+  margin: 0 auto; 
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.quote-icon {
+  position: absolute;
+  bottom: 10px; 
+  right: 10px;
+  width: 80px; 
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid white; 
+}
+
+p {
+  margin: 20px 0;
+  position: relative;
+  z-index: 9;
+}
+
+
+@media (max-width: 768px) {
+  .imags {
+      width: 120px; 
+      height: 120px;
+  }
+
+  .quote-icon {
+      width: 30px; 
+      height: 30px;
+      bottom: 5px; 
+      right: 5px;
+  }
+
+  p {
+      font-size: 14px; 
+  }
+
+  h4, h6 {
+      font-size: 16px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .imags {
+      width: 100px; 
+      height: 100px;
+  }
+
+  .quote-icon {
+      width: 25px;
+      height: 25px;
+  }
+
+  p {
+      font-size: 12px;
+  }
+
+  h4, h6 {
+      font-size: 14px;
+  }
+}
+
+
+ 
+
+// six brands slides
+
+
+.brand-slider {
+  margin: 40px auto;
+  width: 80%;
+}
+.brand-slider div {
+  text-align: center;
+}
+.brand-slider img {
+  max-width: 60%;
+  height: auto;
+}
+
+//seven section
+  
+.seven{
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #b9b9b9;
+  @include bubble;
+}
+.form2 {
+  text-align: center;
+  width: 60%; 
+  margin: 0 auto;
+  height: auto;
+  padding: 30px;
+  margin-bottom: 60px;
+  background-color: white;
+  z-index: 190; 
+
+  h4, h2 {
+    margin-bottom: 20px;
+  }
+
+  .form2-input-group { 
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 50px;
+    width: 100%; 
+
+    input {
+      width: 45%; 
+      padding: 10px 0;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      outline: none;
+      background: none;
+      font-size: 16px;
+      box-sizing: border-box; 
+    }
+
+    .btn { 
+      background-color: #FFA500; 
+      color: white;
+      border: none;
+      border-radius: 50px; 
+      padding: 10px 20px; 
+      cursor: pointer; 
+      height: 100%; 
+      flex-shrink: 0; 
+      margin-bottom: 50px;
+    }
+  }
+  @extend %message-shared
+}
+
+@media (max-width: 768px) {
+  .form2 {
+    width: 100% !important; 
+  }
+
+  .form2-input-group { 
+    flex-direction: column; 
+    width: 100%; 
+
+    input {
+      width: 100% !important; 
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      width: 100%; 
+    }
+  }
+}
+
+
+@media (max-width: 480px) {
+  .form2 {
+    width: 100%; 
+    padding: 15px; 
+  }
+
+  .form2-input-group { 
+    margin-top: 30px;
+    width: 100%; 
+
+    input {
+      font-size: 14px; 
+      padding: 4px 0; 
+      width: 100% !important; 
+    }
+  }
+}
+
+//// footer section
+.footer {
+  text-align: left;
+  // justify-content: center !important;
+  // padding: 70px;
+  margin-top: 50px;
+  padding-left: 70px;
+  padding-right: 170px;
+  width: 100%;
+ 
+
+  p {
+    font-size: 20px;
+    color: #999;
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  // margin-top: 5%;
+  
+  // text-align: center;
+  // 
+
+  .subtitle {
+    font-size: 12px; 
+    line-height: 1.5; 
+    font-weight: 500;
+  }
+
+  .display-4 {
+    font-weight: 1000;
+    display: block;
+  }
+  h3{
+    font-weight: 700;
+    // font-size: 50px;
+    margin-bottom: 12%;
+  }
+  h5{
+    margin-top: 20px;
+    color:#666;
+  }
+}
+
+
+.footer-col {
+  flex-basis: 40%;
+  padding: 0 20px;
+  position: relative;
+  margin: 0;
+
+  &:not(:last-child) {
+    border-right: 2px solid #b9b9b9; 
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+  }
+  h5{
+    font-size: 18px;
+    color: #757575;
+  }
+
+  .industry-columns {
+    display: flex; 
+    justify-content: space-between;
+
+    .industry-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 10px; 
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          color: #666;
+          text-decoration: none;
+          font-size: 18px;
+
+        }
+      }
+    }
+    .industry-list2{
+      right: 2px;
+      @extend .industry-list;
+    }
+  }
+}
+
+.quicklink {
+  list-style: none;
+  margin-bottom: 15px;
+  width: 50%;
+
+ li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 18px;
+  }
+}
+.quicklink2{
+  @extend .quicklink;
+}
+
+.social-icons {
+  margin-top: 30px;
+
+  a {
+    color: #333;
+    font-size: 44px;
+    margin-right: 20px;
+    text-decoration: none;
+    
+    &:hover {
+
+    // Facebook 
+    &:nth-child(1):hover {
+      color: #1877f2; 
+    }
+
+    // Instagram 
+    &:nth-child(2):hover {
+      color: #c13584; 
+    }
+
+    //Twitter 
+    &:nth-child(3):hover {
+      color: #1da1f2; 
+    }
+
+    // YouTube 
+    &:nth-child(4):hover {
+      color: #ff0000; 
+    }
+    }}
+}
+
+
+
+.links {
+  display: flex; 
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+
+  .quicklink {
+    list-style: none;
+    padding: 0;
+    margin: 0 10px; 
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        color: #666;
+        text-decoration: none;
+        font-size: 18px;
+
+        
+      }
+    }
+  }
+
+}
+
+
+@media (max-width: 768px) {
+  .footer{
+    width: 100%;
+  }
+  .footer-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .footer-col {
+    flex-basis: 100%;
+    padding: 0;
+    margin-bottom: 20px; 
+    text-align: center; 
+    border-right: none !important; 
+  }
+
+
+  .industry-columns {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .industry-list {
+    margin-bottom: 10px; 
+  }
+
+  .links {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .quicklink {
+    margin-bottom: 10px; 
+  }
+
+
+  .social-icons {
+    margin-top: 20px; 
+    font-size: 20px;
+  }
+}
+
+
+
+
+.modal-body{
+  .form-button{
+    width: 30%;
+    padding: 5px;
+  }
+}
+
+
+
+//
+
+
+
+
+
+
+
+
+
+// login popup
 
 .popup {
   position: fixed;
@@ -992,18 +1247,18 @@ h3 {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* On top of other elements */
+  z-index: 1000; 
 }
 
 .popup-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
-  width: 60%; /* Adjust width as needed */
+  width: 60%; 
   position: relative;
   h4{
     text-align: center;
@@ -1018,3 +1273,159 @@ h3 {
   font-size: 20px;
   cursor: pointer;
 }
+
+// download brochure
+
+.download{
+position: fixed;
+left: -66px;
+top: 67%;
+border: solid 2px #f79924;
+background-color: #f79924;
+color: white;
+padding: 8px;
+text-align: center;
+vertical-align: top;
+z-index: 10;
+
+transform: rotate(-90deg);
+
+}
+
+// whatsapp skype
+
+.buttons-container {
+  display: flex;
+  // align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 0;
+
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+}
+
+.skype-btn {
+  color: #00AFF0;
+
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 45px;
+  font-weight: bolder;
+  display: inline-flex; /* Makes button adjust to content and align icon/text */
+  align-items: center; /* Centers content vertically */
+  gap: 10px; /* Adds space between icon and text */
+  text-decoration: none; /* Removes any underline on the button link */
+
+  .fa-brands {
+    font-size: 24px; /* Adjusted font size for the icon */
+  }
+
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    font-size: 16px; /* Reduce text size on smaller screens */
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+    
+    .fa-brands {
+      font-size: 20px; /* Slightly smaller icon on smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px; /* Even smaller text on very small screens */
+    padding: 6px 12px; /* Smaller padding for compact buttons */
+    
+    .fa-brands {
+      font-size: 18px; /* Further reduce icon size on very small screens */
+    }
+  }
+}
+
+
+.skype-btn img {
+  width: 150px;
+  height: 70px;
+  margin-right: 10px;
+}
+
+.separator {
+  height: 70px;
+  width: 2px;
+  background-color: #ddd;
+  margin: 0 30px;
+}
+}
+
+
+// //chat
+
+
+.chat-widget {
+  position: fixed;
+  right: 0; /* Align it exactly at the right edge */
+  bottom: 20px;
+  width: 150px;
+  height: 150px;
+  z-index: 999;
+  margin-right: 0; /* Ensure no extra margin on the right */
+  padding: 0; /* Ensure no extra padding */
+}
+
+// We are here image 
+.we-are-here {
+  position: absolute;
+  top: 0;
+  left: 10px; 
+  width: 120px;
+  z-index: 1;
+}
+
+.chat-icon-container {
+  position: absolute;
+  top: 15px;
+  // bottom: 4px;
+  left: 45px;
+  width: 70px;
+  height: 70px;
+  // background-color: #FFA500; 
+  border-radius: 50%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+
+.chat-icon {
+  width: 60px; 
+  height: 60px;
+}
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px; 
+  color: black; 
+  border: none; 
+  border-radius: 50%; 
+  width: 25px; 
+  height: 25px;
+  cursor: pointer; 
+  font-size: 16px; 
+  opacity: 0; 
+  transition: opacity 0.3s; 
+}
+.chat-widget:hover .close-button,
+.chat-widget:focus-within .close-button {
+    opacity: 1; 
+}
+
+
